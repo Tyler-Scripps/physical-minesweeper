@@ -7,11 +7,11 @@ class terminalOutput:
             for rowNum, row in enumerate(gameState):
                 for colNum, cell in enumerate(row):
                     if 'f' in cell:  # flagged cells
-                        print('F ', end='')
+                        print('🚩 ', end='')
                     elif 'u' in cell:    # unchecked cells
-                        print('O ', end='')
+                        print('▢ ', end='')
                     elif cell == 'c':   # checked cells
-                        bombCount = self.countBombs(gameState, colNum, rowNum)
+                        bombCount = self.count_bombs(gameState, colNum, rowNum)
                         print(bombCount, end=' ')
                 print()
         elif gamePhase == "loss":
@@ -28,7 +28,7 @@ class terminalOutput:
     def blank(self, gameState):
         pass
 
-    def countBombs(self, gameState, x, y):
+    def count_bombs(self, gameState, x, y):
         """
         Count how many cells bordering (row, col) contain target_value.
         Checks all 8 surrounding cells (edges and corners).
@@ -62,9 +62,9 @@ class terminalOutput:
                 if cell == 'f':  # flagged cells without bombs
                     print('f ', end='')
                 elif cell == 'fb':    # flagged cells with bombs
-                    print('F ', end='')
+                    print('🚩 ', end='')
                 elif cell == 'ub':   # unchecked bombs
-                    print('B', end=' ')
+                    print('💣', end=' ')
                 else:
                     print('O', end=' ')
             print()

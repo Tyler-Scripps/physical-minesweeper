@@ -3,14 +3,14 @@ import terminalOutput
 import terminalInput
 
 myGame = sweeperGame.sweeperGame(4, 4)
-myGame.setBombCount(1)
+myGame.set_bomb_count(2)
 myTerminalOutput = terminalOutput.terminalOutput()
 myTerminalInput = terminalInput.terminalInput()
 
-myGame.addOutput(myTerminalOutput)
-myGame.addInput(myTerminalInput)
+myGame.add_output(myTerminalOutput)
+myGame.add_input(myTerminalInput)
 
-myGame.startGame(0, 0)
+myGame.start_game(0, 0)
 
 
 while True:
